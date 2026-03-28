@@ -15,6 +15,9 @@ addBtn.addEventListener("click",(e)=>{
     console.log(task)
     taskList[key] =task
     localStorage.setItem('task',JSON.stringify(taskList))
+    //  clean the input
+    document.getElementById("input").value=''
+
     updateList();
 
 });
