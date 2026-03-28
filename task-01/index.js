@@ -1,53 +1,64 @@
 
-let task_list = JSON.parse(localStorage.getItem('task'));
+var taskList = JSON.parse(localStorage.getItem('task')) || {};
 // Load the old task at initial loading
-update_list()   
+updateList() 
 
 
-let add_btn = document.getElementById("add-task");
+
+
+let addBtn = document.getElementById("add-task");
 // Monitor the Add button click event
 
-add_btn.addEventListener("click",(e)=>{
+addBtn.addEventListener("click",(e)=>{
     let task=document.getElementById("input").value;
     let key = Date.now();
     console.log(task)
-    task_list[key] =task
-    localStorage.setItem('task',JSON.stringify(task_list))
-    let container = document.getElementById("task-area");
-
-    let card = document.createElement("div")
-    card.classList.add("card");
-    card.id=key
-
-    let innertext =    `
-    <input type="checkbox" class="status" />
-    <span class="task-name">${task}</span>
-                    
-     <button class="del-btn">Delete</button>`
-
-     card.innerHTML =innertext;
-    container.appendChild(card);
+    taskList[key] =task
+    localStorage.setItem('task',JSON.stringify(taskList))
+    updateList();
 
 });
 
+
+// check the event happen in task area
+document.getElementById("task-area").addEventListener("click", (e) => {
+    console.log(e)
+    if (e.target.classList.contains("del-btn")) {
+        let id = e.target.id;
+        delItems(id)
+    }
+});
+
+
+function delItems(id){
+    delete taskList[id]
+    localStorage.setItem('task',JSON.stringify(taskList))        
+    console.log('Going to update',taskList);
+    
+    updateList()
+}
+
 // update list to create the task from local storage
 
-function update_list(){
-    for(let task in task_list){
-        let name = task_list[task]
+function updateList(){
+    console.log(taskList)
+    let container = document.getElementById("task-area");
+    container.innerHTML=''
+
+    for(let task in taskList){
+        let name = taskList[task]
         console.log(task ,' : ', name  );
+
          let card = document.createElement("div")
          card.classList.add("card");
-         card.id=task
 
-         let innertext =    `
+         let innerText =    `
          <input type="checkbox" class="status" />
          <span class="task-name">${name}</span>
 
-          <button class="del-btn">Delete</button>`
+          <button class="del-btn" id="${task}">Delete</button>`
 
-          card.innerHTML =innertext;
+          card.innerHTML =innerText;
          container.appendChild(card);
     }
 }
-
