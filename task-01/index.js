@@ -13,7 +13,7 @@ addBtn.addEventListener("click",(e)=>{
     let task=document.getElementById("input").value;
     let key = Date.now();
     console.log(task)
-    taskList[key] =task
+    taskList[key] ={'status':0 ,"taskName":task}
     localStorage.setItem('task',JSON.stringify(taskList))
     //  clean the input
     document.getElementById("input").value=''
@@ -29,6 +29,11 @@ document.getElementById("task-area").addEventListener("click", (e) => {
     if (e.target.classList.contains("del-btn")) {
         let id = e.target.id;
         delItems(id)
+    }
+    else if (e.target.classList.contains("status")){
+        let id = e.target.id;
+        console.log("identified ,",id)
+         markeAsComplete(id);
     }
 });
 
@@ -49,19 +54,38 @@ function updateList(){
     container.innerHTML=''
 
     for(let task in taskList){
-        let name = taskList[task]
-        console.log(task ,' : ', name  );
+        let item = taskList[task]
+        console.log(task ,' : ', item.taskName);
 
          let card = document.createElement("div")
          card.classList.add("card");
+         var status =`<input type="checkbox" id="${task}" class="status" /> `
 
-         let innerText =    `
-         <input type="checkbox" class="status" />
-         <span class="task-name">${name}</span>
+         if(item.status==1){
+           status= `<input type="checkbox" class="status"  id="${task}" checked/>`
+
+         }
+         let innerText = `
+         ${status}
+         <span class="task-name">${item.taskName}</span>
 
           <button class="del-btn" id="${task}">Delete</button>`
 
           card.innerHTML =innerText;
          container.appendChild(card);
     }
+}
+
+
+function markeAsComplete(id){
+    if(taskList[id].status==0){
+        taskList[id].status=1;
+    }
+    else{
+        taskList[id].status=0;
+    }
+    
+    console.log("taskList is updated")
+    localStorage.setItem('task',JSON.stringify(taskList))
+    updateList()
 }
