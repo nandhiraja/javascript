@@ -10,8 +10,7 @@ let expression_list = []
 input.addEventListener("click", e=>{
     let value =e.target.id;
     console.log(value);
-
-    if(value !='input-area' & value !="ans"){
+    if(!['input-area','ans','ac'].includes(value)){
         if(value in ['1' ,'2' ,'3' ,'4' ,'5' ,'6' ,'7','8','9','0']){
             number+=value;
             expression+=value;
@@ -24,8 +23,7 @@ input.addEventListener("click", e=>{
             
             expression_list.push(value);
         }
-    result.innerText=expression;
-    console.log(expression_list)
+   
     }
     else if (value=="ans"){
         if(number!=''){
@@ -37,7 +35,13 @@ input.addEventListener("click", e=>{
 
         result.innerText=answer;
     }
+    else if(value =='ac'){
+        expression='';
+        expression_list=[]
+    }
 
+     result.innerText=expression;
+    console.log(expression_list)
 })
 
 function evaluateExpression(expression){
