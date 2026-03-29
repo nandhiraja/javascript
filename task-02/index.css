@@ -13,7 +13,7 @@ body{
 }
 
 #container{
-    width: 35em;
+    width: 35vw;
     height: 50em;
     background-color: rgb(255, 255, 255);
     justify-items: center;
@@ -53,7 +53,7 @@ body{
     height: 2em;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     font-size: 2vw;
-    justify-items: center; 
+    text-align: center; 
     align-content:center;
     background-color: rgb(52, 52, 52);
     border: 4px ridge rgb(149, 149, 149);
@@ -65,11 +65,14 @@ body{
 
 #result-area{
     width: 100%;
-    height: 4em;
-    margin: 4em 0rem;
+    min-height: 2em ;
+    margin: 2em 0rem;
     background-color:rgb(39, 39, 39) ;
     color: azure;
     border: 3px ridge silver;
+    font-size: 1.8vw;
+    text-align: end;
+    align-content: center;
 
 }
 
@@ -93,3 +96,4 @@ body{
 .operator:hover{
     background-color: rgb(246, 157, 62);
 }
+
