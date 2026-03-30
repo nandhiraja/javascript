@@ -10,6 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background: linear-gradient(90deg, rgb(187, 235, 247), rgb(71, 173, 236));
     /* overflow: hidden; */
 }
 
@@ -61,3 +62,52 @@ body{
     border-radius: 1rem;
 }
 
+#result-area{
+    /* width: 30rem; */
+    padding: 2rem;
+    margin: 2rem;
+    background: rgba(0, 255, 255, 0.014);
+    border-radius: 20px;
+    box-shadow: 1px 1px 12px white;
+     
+}
+
+#details{
+    justify-content: space-evenly;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.3em;
+    padding: 1rem;
+    margin: 1em;
+    border: 2px solid white;
+}
+
+#weather-report{
+    justify-items: center;
+    display: flex;
+    font-size: 1.4em;
+    padding: 3rem;
+    box-shadow: 2px 2px 10px rgb(81, 81, 81);
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+
+.card{
+    min-width: 6rem;
+    min-height: 3rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgb(81, 81, 81);
+
+
+}
+
+
+.label{
+    font-size: 16px;
+    justify-self: center;
+}
+.result{
+    justify-self:center ;
+    font-size: 25px;
+    padding: 2rem 1rem;
+}
