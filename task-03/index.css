@@ -40,5 +40,64 @@ header {
     width: 300px;
     height: 200px;
     border: 10px solid rgb(250, 250, 250);
+    transition: transform .5s ease-in-out;
 
 }
+
+
+#container img:hover{
+    transform: rotate(2deg) scale(1.2);
+  /* transform: matrix(1, 0, 0.5, 1, 10, 10); */
+
+}
+
+
+#model-area{
+    position: fixed;
+    justify-items:center ;
+    align-content: center;
+    top: 0px;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(32, 32, 33, 0.921);
+}
+#model-card{
+    width: 70%;
+    height: 70%;
+    background-color: rgba(240, 248, 255, 0.605);
+    position: relative;
+
+
+}
+#card-image{
+    width: 100%;
+
+    img{
+        width: 100%;
+    }
+}
+
+#card-close{
+    position: absolute;
+    z-index: 20;
+    right:0;
+
+    a{
+        text-decoration: none;
+        font-size: 3rem;
+        color: rgb(253, 253, 253);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       
+    }
+    
+     padding:.5rem .8rem;
+     /* background-color: rgba(229, 57, 41, 0.671); */
+
+}
+
+#card-close:hover{
+    background-color: rgb(191, 20, 20);
+
+}
+
