@@ -40,6 +40,7 @@ input.addEventListener("click", e=>{
     }
     else if(value =='ac'){
         expression='';
+        number='';
         expression_list=[]
         result.innerText='';
 
@@ -81,7 +82,7 @@ function evaluateExpression(){
             let indx = expression_list.indexOf('+');
             let prev = Number(expression_list[indx-1])
             let next = Number(expression_list[indx+1])
-            let value = prev/next;
+            let value = prev+next;
             expression_list.splice(indx-1,3, value);           
             console.log(expression_list)
         }
@@ -89,7 +90,7 @@ function evaluateExpression(){
             let indx = expression_list.indexOf('-');
             let prev = Number(expression_list[indx-1])
             let next = Number(expression_list[indx+1])
-            let value = prev/next;
+            let value = prev-next;
             expression_list.splice(indx-1,3, value);           
             console.log(expression_list)
         }
