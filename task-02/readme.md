@@ -1,5 +1,4 @@
-# Interactive To-Do List Application
-
+# Simple Calculator
 ## Objective:
   -  Build a basic calculator that performs arithmetic operations like addition, subtraction, multiplication, and division.
 ## Requirements:
@@ -12,7 +11,7 @@
 
 ```js
 
-// condtion to get the use input
+// condtion to get the user input
 
 
 input.addEventListener("click", e=>{
@@ -56,14 +55,15 @@ input.addEventListener("click", e=>{
 
 })
 
+//  function to evaluate the expression 
 
 function evaluateExpression(){
    
      let result = 0;
 
-     while(expression!=[]){
+     while(expression!=[]){    // do operation untill expression is empty
         console.log(++result , " while ", expression_list)
-        if(expression_list.indexOf('/')!= -1){
+        if(expression_list.indexOf('/')!= -1){      // BODMAS   - >  Divide
             let indx = expression_list.indexOf('/');
             let prev = Number(expression_list[indx-1])
             let next = Number(expression_list[indx+1])
@@ -71,8 +71,8 @@ function evaluateExpression(){
             expression_list.splice(indx-1,3, value);           
             console.log(expression_list)
         }
-
-         else if(expression_list.indexOf('*')!= -1){
+ 
+         else if(expression_list.indexOf('*')!= -1){    // multiply
             let indx = expression_list.indexOf('*');
             let prev = Number(expression_list[indx-1])
             let next = Number(expression_list[indx+1])
@@ -80,7 +80,7 @@ function evaluateExpression(){
             expression_list.splice(indx-1,3, value);           
             console.log(expression_list)
         }
-         else if(expression_list.indexOf('+')!= -1){
+         else if(expression_list.indexOf('+')!= -1){    // add
             let indx = expression_list.indexOf('+');
             let prev = Number(expression_list[indx-1])
             let next = Number(expression_list[indx+1])
@@ -88,7 +88,7 @@ function evaluateExpression(){
             expression_list.splice(indx-1,3, value);           
             console.log(expression_list)
         }
-         else if(expression_list.indexOf('-')!= -1){
+         else if(expression_list.indexOf('-')!= -1){   // subract
             let indx = expression_list.indexOf('-');
             let prev = Number(expression_list[indx-1])
             let next = Number(expression_list[indx+1])
