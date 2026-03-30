@@ -4,7 +4,9 @@
         <title>Weather Application</title>
         <link rel="stylesheet" href="./index.css">
         <meta name="viewport" content="width=device-width">
-        <script src="./index.js" defer></script>
+        <script type='module' src="./index.js" defer></script>
+        <script type="module" src="./env.js" defer></script>
+
 
     </head>
     <body>
@@ -20,7 +22,70 @@
         </main>
 
          <section id="result-area">
+            <div id="details"> 
+               
 
+            
+            <div class='details card'>
+            <div class="details label">City</div>
+            <div class="result" id="city">Erode</div>
+            </div>
+
+            
+            <div class='details card'>
+            <div class="details label">State</div>
+            <div class="result" id="state">Tamilnadu</div>
+            </div>
+
+            
+            <div class='details card'>
+            <div class="details label">Country</div>
+            <div class="result" id="country">India</div>
+            </div>
+
+            
+            <div class='details card'>
+            <div class="details label">Local Time</div>
+            <div class="result" id="local-time">10:40 pm</div>
+            </div>
+            
+          
+            </div>
+
+            <div  id="weather-report">
+
+            <div class='card'>
+            <div class="label">Condition</div>
+            <div class="result" id="condition">cloudy</div>
+            </div>
+
+          
+
+            <div class='card'>
+            <div class="label">Humidity</div>
+            <div class="result" id="humidity">89 %</div>
+            </div>
+
+
+            <div class='card'>
+            <div class="label">Temp</div>
+            <div class="result" id="temperature">20 °C </div>
+            </div>
+
+            <div class='card'>
+            <div class="label">Pressure</div>
+            <div class="result" id="pressure">cloudy</div>
+            </div>
+
+            <div class='card'>
+            <div class="label">Wind-Speed</div>
+            <div class="result" id="wind-speed">45 m/s w</div>
+            </div>
+           
+            
+
+
+            </div>
         </section>
     </body>
 
