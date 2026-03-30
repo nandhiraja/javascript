@@ -17,3 +17,9 @@ imageContainer.addEventListener("click" ,e=>{
 })
 
 
+let cardClose = document.getElementById("card-close");
+
+cardClose.addEventListener("click",()=>{
+    modelArea.style.display="none"
+
+})
