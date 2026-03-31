@@ -23,11 +23,12 @@ let temperature = document.getElementById("temperature");
 let pressure = document.getElementById("pressure");
 let windSpeed = document.getElementById("wind-speed");
 
-
+let resultArea =  document.getElementById("result-area")
 
 
 async function getWeather(user_city){
 
+    try{
     let api_data = await fetch(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${user_city}&aqi=no`);
     api_data =  await api_data.json()
     console.log(api_data);
@@ -45,7 +46,10 @@ async function getWeather(user_city){
     temperature.innerText = `${data.temperature} °C`;
     pressure.innerText = `${data.pressure} hPc`;
     windSpeed.innerText = `${data.wind} km/h`
-  
+    }
+    catch(e){
+        resultArea.innerHTML=`<h2 id='error'> Something went wrong .. <h2>`
+    }
 }
 
 function preprocessData(data){
