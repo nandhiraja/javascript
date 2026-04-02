@@ -26,9 +26,27 @@ let questions = [
         options: ['Apple', 'Meta', 'Google', 'Amazon'],
         answer: '3'
     },
-   
+    {
+        question: 'What does CPU stand for?',
+        options: ['Central Process Unit', 'Central Processing Unit', 'Computer Personal Unit', 'Control Processing Utility'],
+        answer: '2'
+    },
+    {
+        question: 'Which device is mainly used to connect a computer to the internet wirelessly?',
+        options: ['Router', 'Monitor', 'Printer', 'Keyboard'],
+        answer: '1'
+    },
+    {
+        question: 'Which company created Windows operating system?',
+        options: ['Google', 'IBM', 'Microsoft', 'Intel'],
+        answer: '3'
+    },
+    {
+        question: 'What does RAM stand for?',
+        options: ['Random Access Memory', 'Read Access Memory', 'Rapid Active Memory', 'Run Access Module'],
+        answer: '1'
+    }
 ];
-
 quizArea.addEventListener('click', e=>{
    
     let id = e.target.id
