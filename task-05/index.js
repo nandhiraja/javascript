@@ -36,5 +36,8 @@ function checkAnswer(id){
 
     }
     console.log(buttons)
+    buttons.forEach(button =>{
+        button.disabled=true
+    })
 }
 
