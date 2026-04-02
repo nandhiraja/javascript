@@ -26,26 +26,7 @@ let questions = [
         options: ['Apple', 'Meta', 'Google', 'Amazon'],
         answer: '3'
     },
-    {
-        question: 'What does CPU stand for?',
-        options: ['Central Process Unit', 'Central Processing Unit', 'Computer Personal Unit', 'Control Processing Utility'],
-        answer: '2'
-    },
-    {
-        question: 'Which device is mainly used to connect a computer to the internet wirelessly?',
-        options: ['Router', 'Monitor', 'Printer', 'Keyboard'],
-        answer: '1'
-    },
-    {
-        question: 'Which company created Windows operating system?',
-        options: ['Google', 'IBM', 'Microsoft', 'Intel'],
-        answer: '3'
-    },
-    {
-        question: 'What does RAM stand for?',
-        options: ['Random Access Memory', 'Read Access Memory', 'Rapid Active Memory', 'Run Access Module'],
-        answer: '1'
-    }
+   
 ];
 
 quizArea.addEventListener('click', e=>{
@@ -128,7 +109,26 @@ function showResult(){
     
     question_area.innerText = 'Result:';
     option.style.display='none';
-   result.innerText= `Your score : ${score} / ${currentQuestionIndex+1}`
+    feedback = ""
+    if (score === currentQuestionIndex) {
+        feedback = "Perfect score!  You answered every question correctly.";
+    }
+    else if (score >= Math.ceil((currentQuestionIndex) * 0.75)) {
+        feedback = "Excellent work! You got most of the answers right.";
+    }
+    else if (score >= Math.ceil((currentQuestionIndex) * 0.5)) {
+        feedback = "Nice job! You have a good understanding, just a little more practice.";
+    }
+    else if (score > 0) {
+        feedback = "Good effort! You got a few correct—keep practicing and you'll improve quickly.";
+    }
+    else {
+        feedback = "Don't worry! Everyone starts somewhere. Try again and see how much you improve.";
+    }
+
+    result.innerHTML = `<h2>Your score: ${score} / ${currentQuestionIndex}</h2>
+                        <h3 id ="feedback-title">Feedback : </h3>
+                        <h4 id='feedback'>${feedback}<h4>`
    result.style.display='block'
     
 }
