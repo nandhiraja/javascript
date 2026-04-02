@@ -1,19 +1,53 @@
 let quizArea =  document.getElementById("quiz-area")
-let question = document.getElementById('question')
+let question_area = document.getElementById('question')
 
 let buttons = document.querySelectorAll('input')
+let option_1 = document.getElementById('opt-1')
+let option_2 = document.getElementById('opt-2')
+let option_3 = document.getElementById('opt-3')
+let option_4 = document.getElementById('opt-4')
 
-let currentQuestion = {
-    'question': 'Which is scriping language?',
-    'options' : ['HTML' , 'JAVA','GO','Perl'],
-    'answer' : '1'
-     
-}
 
+let currentQuestion = null
+let currentQuestionIndex = 0
+let questions = [
+    {
+        question: 'Which company created the iPhone?',
+        options: ['Samsung', 'Apple', 'Google', 'Microsoft'],
+        answer: '2'
+    },
+    {
+        question: 'Which company owns Android?',
+        options: ['Apple', 'Meta', 'Google', 'Amazon'],
+        answer: '3'
+    },
+    {
+        question: 'What does CPU stand for?',
+        options: ['Central Process Unit', 'Central Processing Unit', 'Computer Personal Unit', 'Control Processing Utility'],
+        answer: '2'
+    },
+    {
+        question: 'Which device is mainly used to connect a computer to the internet wirelessly?',
+        options: ['Router', 'Monitor', 'Printer', 'Keyboard'],
+        answer: '1'
+    },
+    {
+        question: 'Which company created Windows operating system?',
+        options: ['Google', 'IBM', 'Microsoft', 'Intel'],
+        answer: '3'
+    },
+    {
+        question: 'What does RAM stand for?',
+        options: ['Random Access Memory', 'Read Access Memory', 'Rapid Active Memory', 'Run Access Module'],
+        answer: '1'
+    }
+];
 
 quizArea.addEventListener('click', e=>{
+   
     let id = e.target.id
-    console.log(id ,e)
+    
+    console.log(e.target.closest ,e.target.id)
     if(['1','2','3','4'].includes(id)){
         console.log("passing..")
         checkAnswer(id)
@@ -41,3 +75,37 @@ function checkAnswer(id){
     })
 }
 
+
+function handleOnClick(){
+       if (currentQuestionIndex< questions.length){
+       updateNextQuestion()
+       }
+       else{
+        showResult()
+       }
+}
+
+function updateNextQuestion() {
+    currentQuestion = questions[currentQuestionIndex];
+
+    question_area.innerText = currentQuestion.question;
+
+    option_1.querySelector('span').innerText = currentQuestion.options[0];
+    option_2.querySelector('span').innerText = currentQuestion.options[1];
+    option_3.querySelector('span').innerText = currentQuestion.options[2];
+    option_4.querySelector('span').innerText = currentQuestion.options[3];
+
+    buttons.forEach(button => {
+        button.disabled = false;
+        button.checked = false;
+    });
+
+    option_1.classList.remove('correct', 'incorrect');
+    option_2.classList.remove('correct', 'incorrect');
+    option_3.classList.remove('correct', 'incorrect');
+    option_4.classList.remove('correct', 'incorrect');
+
+    currentQuestionIndex++;
+}
+
+updateNextQuestion()
