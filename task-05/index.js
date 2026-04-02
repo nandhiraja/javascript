@@ -1,5 +1,6 @@
 let quizArea =  document.getElementById("quiz-area")
 let question_area = document.getElementById('question')
+let nextButton = document.getElementById("next-btn")
 
 let buttons = document.querySelectorAll('input')
 let option_1 = document.getElementById('opt-1')
@@ -7,9 +8,13 @@ let option_2 = document.getElementById('opt-2')
 let option_3 = document.getElementById('opt-3')
 let option_4 = document.getElementById('opt-4')
 
+let option = document.getElementById("option")
+let result = document.getElementById("result")
+
 
 let currentQuestion = null
 let currentQuestionIndex = 0
+let score =0
 let questions = [
     {
         question: 'Which company created the iPhone?',
@@ -62,6 +67,7 @@ function checkAnswer(id){
     if(currentQuestion.answer ==id){
         console.log("clickans is correct")
        document.getElementById(`opt-${id}`).classList.add('correct')
+        score++
     }
     else{
         console.log("not correct")
@@ -81,7 +87,17 @@ function handleOnClick(){
        updateNextQuestion()
        }
        else{
+        if(nextButton.innerText=='Play Again'){
+            currentQuestionIndex=0;
+            result.style.display = 'none'
+            option.style.display ='flex'
+            updateNextQuestion()
+
+        }
+        else{
         showResult()
+        nextButton.innerText='Play Again'
+       }
        }
 }
 
@@ -106,6 +122,15 @@ function updateNextQuestion() {
     option_4.classList.remove('correct', 'incorrect');
 
     currentQuestionIndex++;
+}
+
+function showResult(){
+    
+    question_area.innerText = 'Result:';
+    option.style.display='none';
+   result.innerText= `Your score : ${score} / ${currentQuestionIndex+1}`
+   result.style.display='block'
+    
 }
 
 updateNextQuestion()
