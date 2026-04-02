@@ -56,3 +56,20 @@ input[type='radio']{
     height: 20px;
 }
 
+
+#submit-button{
+    display: flex;
+    justify-content: end;
+
+    button{
+        margin: 2rem;
+        width: 6rem;
+        height: 3rem;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 900;
+        background: linear-gradient(90deg ,rgb(92, 239, 207),rgb(0, 221, 255));
+        cursor: pointer;
+    }
+
+}
