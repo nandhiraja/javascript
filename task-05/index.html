@@ -16,29 +16,37 @@
         <section id="quiz-area">            
             
             <div class="question-area">
-                <div id="question">Which all are scripting Language</div>        
+                <div id="question"></div>        
             </div>
 
-            <div class="options-area">
-                <div class="option">
+            <div id="options-area">
+                <div id="option">
                     
                     <label  id='opt-1' for="1" >
-                       <input class="input"  type='radio' name='option' id="1">HTML 
+                       <input class="input"  type='radio' name='option' id="1">
+                       <span></span> 
                     </label>
 
                     <label id='opt-2' for="2">
-                       <input class="input" type='radio' name='option' id="2">CSS 
+                       <input class="input" type='radio' name='option' id="2">
+                       <span></span> 
                     </label>
 
                     <label  id='opt-3' for="3">
-                       <input class="input" type='radio' name='option' id="3">Java 
+                       <input class="input" type='radio' name='option' id="3">
+                       <span></span> 
                     </label>
 
                     <label  id='opt-4' for="4">
-                       <input class="input" type='radio' name='option' id="4">C++ 
+                       <input class="input" type='radio' name='option' id="4">
+                       <span></span> 
                     </label>
 
                    
+                </div>
+
+                <div id ='result'>
+
                 </div>
 
             </div>
@@ -49,7 +57,7 @@
 
         </section>
         <section id="submit-button">
-                <button onclick=handleClick()>Next</button>
+                <button id='next-btn' onclick=handleOnClick()>Next</button>
         </section>
     </body>
 
