@@ -9,45 +9,47 @@
     </head>
     <body>
         <header>
-            <h2>Quiz play</h2>
+            <h2>Quiz Time</h2>
         </header>
 
     
-        <section id="quiz-area">
+        <section id="quiz-area">            
             
             <div class="question-area">
-                <div class="question">Which all are scripting Language</div>
-        
+                <div class="question">Which all are scripting Language</div>        
             </div>
+
             <div class="options-area">
                 <div class="option">
                     
-                    <label for="1">
-                       <input type='radio' name='option' class="1" id="1">HTML 
+                    <label class="incorrect" for="1">
+                       <input type='radio' name='option' id="1">HTML 
                     </label>
 
-                    <label for="2">
-                       <input type='radio' name='option' class="1" id="2">css 
+                    <label class="correct" for="2">
+                       <input type='radio' name='option' id="2">CSS 
                     </label>
 
-                    <label for="3">
-                       <input type='radio' name='option' class="1" id="3">java 
+                    <label class="incorrect" for="3">
+                       <input type='radio' name='option' id="3">Java 
                     </label>
 
-                    <label for="4">
-                       <input type='radio' name='option' class="1" id="4">c++ 
+                    <label class="incorrect" for="4">
+                       <input type='radio' name='option' id="4">C++ 
                     </label>
 
                    
                 </div>
-            </div>
 
-            <section id="submit-button">
-                <button>Submit</button>
-            </section>
+            </div>
 
             
 
+            
+
+        </section>
+        <section id="submit-button">
+                <button onclick=handleClick()>Next</button>
         </section>
     </body>
 
