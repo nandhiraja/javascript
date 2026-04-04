@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: .8fr 3fr;
+    grid-template-areas: 'aside chatArea';
+    background: linear-gradient(90deg, rgb(37, 37, 37), rgb(28, 28, 28));
+   
+}
+
+aside{
+    grid-area: 'aside';
+    padding: 1rem;
+    background-color: rgb(26, 25, 25);
+    color:aliceblue;
+    font-size: 20px;
+}
+.contacts{
+    margin: 1rem auto;
+    padding: 1.3rem;
+    border-radius: 10px;
+
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.app-name{
+    padding-bottom:2rem;
+    padding-top: 3rem;
+    font-size: 2rem;
+    text-shadow: 1px 2px 2px;
+}
+
