@@ -6,7 +6,7 @@
 body{
 
     min-height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
     display: grid;
     grid-template-columns: .8fr 3fr;
     grid-template-areas: 'aside chatArea';
@@ -58,16 +58,17 @@ aside{
 #chat-area{
     display: flex;
     padding: 1rem 2rem;
-    height: 85%;
+    height: 80%;
     flex-direction: column;
     flex-grow: 1;
+    overflow-y: auto;
 }
 
 .message{
     padding: 1rem 2rem;
     width: max-content;
     font-size: 20px;
-    font-family:Verdana;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color:aliceblue
 
 }
@@ -87,4 +88,43 @@ aside{
 }
 
 
+
+.timestamp{
+    font-size: 13px;
+    color: rgba(240, 248, 255, 0.553);
+    font-weight: 300;
+    padding-top: .6rem
+}
+.receiver-time{
+    justify-self: end;
+}
+
+#input-area{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: rgba(2, 12, 73, 0.495);
+    padding: 1rem 1rem;
+
+    input{
+        width: 100%;
+        margin: auto 1rem;
+        height: 2rem;
+        padding-left: 10px;
+        font-size: 15px;
+        border-radius: 20px;
+    }
+
+}
+
+
+#send-btn{
+    background-color: green;
+    color: azure;
+    padding: 10px;
+    border-radius:20px;
+}
 
