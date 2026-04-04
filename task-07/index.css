@@ -37,3 +37,54 @@ aside{
     text-shadow: 1px 2px 2px;
 }
 
+#chat-container{
+    grid-area: chatArea;
+    margin:1rem;
+
+}
+#user-name{
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 700; 
+    padding:2rem;
+    padding-left:3rem ;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(24, 24, 24);
+    border-bottom:1px solid rgba(233, 229, 229, 0.522) ;
+}
+
+#chat-area{
+    display: flex;
+    padding: 1rem 2rem;
+    height: 85%;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.message{
+    padding: 1rem 2rem;
+    width: max-content;
+    font-size: 20px;
+    font-family:Verdana;
+    color:aliceblue
+
+}
+
+.sender{
+    align-self: end;
+    background-color: rgb(5, 120, 81);
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+}
+
+.receiver{
+    background-color: rgb(5, 90, 164);
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+
+}
+
+
+
