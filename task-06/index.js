@@ -16,12 +16,17 @@ dragables.forEach(list=>{
 container.addEventListener('dragover', (e)=>{
     e.preventDefault()
     let insertElement = getElemetAfterDragging(e.clientY)
-    console.log(insertElement)
-
+    let dragable = document.querySelector('.dragging')
+    if (insertElement==null){
+    container.appendChild(dragable)
+     }
+    else{
+        container.insertBefore(dragable,insertElement)
+    }
    
 })
 
-function getElemetAfterDragging(y ){
+function getElemetAfterDragging(y){
      let dragableItems =  [...document.querySelectorAll('.dragable:not(.dragging)')]
 
     return dragableItems.reduce((near,child)=>{
