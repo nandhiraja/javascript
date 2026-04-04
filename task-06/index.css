@@ -59,6 +59,12 @@ header {
     font-size: larger;
     margin: 1rem;
     cursor: move;
+    transition: all .3s linear;
+}
+
+.drag-over{
+    background-color:  rgba(15, 206, 231, 0.886);
+    transform: scale(1.02);
 
 }
 
@@ -99,7 +105,3 @@ aside{
     color: aqua;
 }
 
-.dragging{
-    background-color: rgb(65, 182, 236);
-    opacity: 1;
-}

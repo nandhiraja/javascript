@@ -11,6 +11,21 @@ dragables.forEach(list=>{
     list.addEventListener('dragend',()=>{
         list.classList.remove('dragging')
     })
+    list.addEventListener('dragover', (e) => {
+      e.preventDefault(); 
+    });
+
+    list.addEventListener('dragenter', () => {
+      list.classList.add('drag-over');
+    });
+
+    list.addEventListener('dragleave', () => {
+      list.classList.remove('drag-over');
+    });
+
+    list.addEventListener('drop', () => {
+      list.classList.remove('drag-over');
+    });
 }) 
 
 container.addEventListener('dragover', (e)=>{
