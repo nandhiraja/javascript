@@ -5,11 +5,15 @@
 
 body{
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header{
-    background:linear-gradient(180deg, rgb(189, 97, 36),rgb(233, 190, 112));
+    background:linear-gradient(180deg, rgb(185, 85, 19),rgb(244, 130, 0));
     padding: 2rem 1rem;
+    position: sticky;
+    width: 100%;
+    top: 0px;
 }
 
 nav{
@@ -32,4 +36,43 @@ nav> a:hover {
     background:linear-gradient(90deg, rgb(252, 130, 48),brown);
     
 
+}
+
+#content-area{
+    min-height: 140vh;
+    background: linear-gradient(180deg, rgb(254, 254, 254),rgb(248, 190, 118),rgb(247, 177, 87),white);
+}
+
+#home-hero{
+    
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 90vh;
+    color: white;
+    border-top-left-radius:20em;
+    border-top-right-radius:20em;
+
+    background:linear-gradient( 90deg ,rgb(231, 113, 24),rgb(145, 33, 5)) ;
+   img{
+    width: 60em;
+   }
+}
+
+#home-hero-content{
+    justify-items: center;
+    padding :3rem;
+    font-size: 2rem;
+}
+
+
+footer{
+    margin-top: 20rem;
+    background-color: black;
+    min-height: 10rem;
+    color: aliceblue;
+    font-size: 2rem;
+    text-align: center;
+    align-content: center;
 }
