@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+}
+
+header{
+    background:linear-gradient(180deg, rgb(189, 97, 36),rgb(233, 190, 112));
+    padding: 2rem 1rem;
+}
+
+nav{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.3rem;
+    a{  
+        padding: 1rem;
+        text-decoration: none;
+        color:white;
+        margin:1rem;
+        cursor: pointer;
+        border-radius: 10px;
+       
+
+    }
+}
+
+nav> a:hover {
+    box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.488);
+    background:linear-gradient(90deg, rgb(252, 130, 48),brown);
+    
+
+}
