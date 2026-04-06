@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header{
+    background:linear-gradient(180deg, rgb(43, 43, 43),rgb(28, 28, 28));
+    padding: 2rem 1rem;
+    position: sticky;
+    width: 100%;
+    top: 0px;
+}
+
+nav{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.3rem;
+    a{  
+        padding: 1rem;
+        text-decoration: none;
+        color:rgb(255, 255, 255);
+        margin:1rem;
+        cursor: pointer;
+        transition: border .3s ease-in-out;
+
+
+    }
+}
+
+nav> a:hover {
+    border-bottom: 1px solid rgb(0, 255, 255)
+    
+
+}
