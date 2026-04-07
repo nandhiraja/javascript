@@ -3,10 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: clamp(12px ,1.2vw ,18px);
+}
 
 body{
     min-height: 100vh;
     background-color: rgb(236, 235, 235);
+    line-height: 1.6;
 }
 
 .navigation{
@@ -26,8 +30,8 @@ body{
 }
 
 .navigation a {
-    padding: clamp(.2rem , 1.5rem ,2rem);
-    font-size: 1.2em;
+    padding: clamp(0.5rem, 1vw, 1rem);
+    font-size: 1rem;
     text-decoration: none;
     color: black;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -36,7 +40,6 @@ body{
     transition: box-shadow .3s ease-in;
     box-sizing: border-box;
 }
-
 #cart img{
     width: 100%;
     max-width: 25px;
@@ -60,3 +63,60 @@ body{
 #cart img:hover{
     transform: scale(1.1);
 }
+.container{
+    min-height: 100%;
+}
+/* homepage */
+
+.hero{
+    background-image: url(./images/hero-banner.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 80vh;
+    padding: 2rem .5rem;
+}
+.hero-content{
+    width: 100%;
+    max-width: 50%;
+    position: relative;
+    margin: 1rem 2rem;
+    color:white;
+}
+.hero-tag{
+    font-size:1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+
+.hero-image img{
+
+    position: absolute;
+    top:0px;
+    z-index: -2;
+    height: auto ;
+
+    object-fit: fill;
+}
+.hero-content h1 {
+    font-size: clamp(2rem,4vw,3rem);
+
+}
+.hero-content p{
+    font-size: clamp(.75rem,1.5vw,2rem);
+
+}
+.explore-btn{
+
+    margin-top: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    font-size: clamp(1rem,1.4vw,3rem);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    
+    background:linear-gradient(90deg ,red,orange) ;
+}
+
