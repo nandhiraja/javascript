@@ -149,7 +149,7 @@ body{
 
 .content{
     width: 90%;
-    margin: 0 auto;
+    margin: 4rem auto;
     box-sizing: border-box;    
     padding: clamp(1.2rem ,1.5vw,2rem);
     display: flex;
@@ -226,4 +226,52 @@ body{
 
 .buy-btn:hover{
     transform:translateY(-8px)
+}
+
+
+
+footer{
+
+    
+    margin-top: 200px;
+    background-color: #080808;
+    color:white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    gap: 4rem;
+}
+
+.footer-top{
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+}
+
+.footer-top a{
+     display: block;
+    color: aliceblue;
+    padding: clamp(.5rem,.7vw,1.2rem);
+
+}
+.quick-links{
+   padding: 0rem 2rem ;
+ 
+
+}
+
+.customer-support{
+       padding: 0rem 2rem ;
+
+  
+}
+
+.contact-details{
+    padding: 0rem 2rem;
+}
+
+.footer-bottom{
+    justify-items: center;
+    font-size: larger;
 }
