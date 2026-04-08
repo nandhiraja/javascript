@@ -1,0 +1,176 @@
+
+
+
+.purchase-area {
+    margin: 2rem auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1300px; 
+    gap:3rem;
+}
+
+.filters{
+    
+    grid-area: filter;
+    display: flex; 
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    max-height: 20vh;    
+    position: sticky;
+    top:0px;
+    background-color: rgb(235, 236, 237);
+    padding: 1rem;
+    border-right: 3px ridge black;
+    border-radius: 22px;
+    box-shadow: -1px 01px 3px black;
+     z-index:5;
+
+}
+
+
+
+.price-range{
+    display: block;
+    width: 400px;
+    background-color: rgb(237, 236, 235);
+    border-radius: 20px;
+    
+}
+
+.price-range label{    
+        padding:1rem;
+
+}
+
+.search-box{
+    margin: .5rem 0rem ;
+}
+.search-box   input{
+        width: 100%;
+        height: 2rem;
+        padding: .5rem;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+.brand-filter{
+    padding: 2rem;
+    display: flex;
+    /* flex-direction: ; */
+    flex-wrap: wrap;
+
+    gap: .4rem;
+}
+.filter-btn{
+    font-size: large;
+    margin: 0rem 1rem;
+}
+
+
+
+
+.products {
+    grid-area:products;
+    /* box-shadow: 1px 2px 14px rgba(73, 72, 70, 0.312); */
+
+    max-width: 98%;
+    padding: 2rem;
+   border-radius: 30px;
+   background-color: rgba(246, 247, 248, 0.633);
+    display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    
+
+}
+
+
+.card{
+    background-color: rgba(236, 235, 233, 0.612);
+    /* width: 100px; */
+    margin-bottom: 3rem;
+    padding: .6rem;
+    display: grid;
+    grid-template-rows: 1fr auto auto;
+
+    border-radius: 20px;
+    box-shadow: 2px 1px 40px rgba(82, 81, 79, 0.468);
+    transition: transform .7s ease-out;
+}
+.card  img{
+        min-width: 100%;
+        display: block;
+        justify-self: center;
+        align-self: center  ;
+        transition: transform .8s ease-out;
+    }
+
+.card-title{
+        padding: .5rem;
+        font-size: 20px;
+        font-weight: 900;
+    }
+.card-description {
+        padding: .8rem;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+
+
+.details{
+     /* border-top: 3px solid rgba(79, 78, 78, 0.356); */
+    padding: 1rem 2rem ;
+    /* padding-bottom: 2rem; */
+    display: flex;
+    flex-direction: column;
+}
+.price-details{
+    display: flex;
+}
+
+
+
+.product-price{
+    align-self: center;
+    font-size: clamp(1.2rem,1vw,1.6rem);
+    font-weight: 600;
+    color: rgb(7, 89, 205);
+
+}
+
+
+.buy{
+       flex :1  0 200;
+       margin-left: auto;
+        width: fit-content;
+        border-radius: 10px;
+        text-decoration-line: none;
+        color: white;
+        padding: .5rem 1.5rem;
+        font-size: 16px;
+        align-content: center;
+        transition: transform .3s ease-out;
+
+        background: linear-gradient(90deg, red, rgb(240, 135, 6));
+}
+
+
+.card-image:hover{
+    transform: translateY(-5px);
+}
+
+.card:hover{
+    transform: translateY(-13px);
+
+}
+
+.buy:hover{
+    transform: scale(1.2);
+}
+
