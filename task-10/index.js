@@ -151,7 +151,7 @@ productArea.addEventListener('click' ,e=>{
             cartData[id].count++
         }
         else{
-        cartData[id]={items : items[id],
+        cartData[id]={item : items[id],
                     count : 1                   
                     }
             }
@@ -159,8 +159,40 @@ productArea.addEventListener('click' ,e=>{
         console.log(id)
 
     }
-    console.log(cartData)
+    // console.log(cartData)
+    loadCartItems()
+
 })
+
+
+let cartArea = document.querySelector('.cart-items');
+
+function loadCartItems(){
+    cartArea.innerHTML=''
+    for (const[key, value] of Object.entries(cartData)){
+        let cartItem = document.createElement('div')
+        cartItem.classList.add('cart-item')
+        cartItem.id = `cart-${key}`
+
+        content =   `
+         <div class="cart-item-image">
+                        <img class="item-image" src="${value.item.image}" alt="cart-item-image">
+                        </div>
+                        <div class="cart-details">
+                            <div class="cart-item-title">${value.item.title}</div>
+                            <div class="cart-price-details">
+                                 <p class="cart-product-price">Rs ${value.item.price}</p>
+                            
+                                <a class="cart-increment" href="#cart">+</a>
+                            </div>
+                        </div>
+                    `
+
+        cartItem.innerHTML= content
+        cartArea.appendChild(cartItem)
+        console.log('key : ',key, 'value : ',value)
+    }
+}
 
 
 
