@@ -211,5 +211,55 @@ function loadCartItems(){
 }
 
 
+cartArea.addEventListener('click', (e) => {
+    const target = e.target
+
+    if(target.classList.contains('increment')){
+        const id = target.id.replace('increment-item-', '')
+       
+        increaseItem(id)
+    }
+
+     if(target.classList.contains('decrement')){
+        const id = target.id.replace('decrement-item-', '')
+         decreaseItem(id)
+    }
+
+    
+    if(target.classList.contains('remove-item')){
+        const id = target.id.replace('removeitem-', '')
+          deleteItem(id)
+    }
+})
 
 
+
+function increaseItem(id){
+     if(id in cartData){  
+    
+     cartData[id].count++;
+     
+     loadCartItems()
+    }
+}
+
+
+
+function decreaseItem(id){
+    if(id in cartData){
+    if(cartData[id].count <=0){
+        deleteItem(id)
+        return    
+    }
+    else{
+     cartData[id].count--;
+     }
+     loadCartItems()
+    }
+}
+
+
+function deleteItem(id){
+    delete cartData[id]
+    loadCartItems()
+}
