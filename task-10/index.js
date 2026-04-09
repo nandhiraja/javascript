@@ -1,4 +1,4 @@
-const DATA = {
+const Data = {
   "categories": [
     "TV",
     "Fridge",
@@ -110,12 +110,13 @@ const DATA = {
   ]
 }
 
-
+let dataSource = Data
 let productArea =  document.querySelector('.products')
 let items = {}
-function loadPorducts(){
-    
-    DATA['products'].forEach(item => {
+function loadProducts(data){
+    console.log('Updating UI')
+    productArea.innerHTML=''
+    data['products'].forEach(item => {
         console.log('loadItems : ',item)
         items[item.id]= item
         
@@ -140,7 +141,6 @@ function loadPorducts(){
     });
 }
 
-loadPorducts()
 let cartData = {}
 
 productArea.addEventListener('click' ,e=>{
@@ -267,7 +267,7 @@ function deleteItem(id){
 let categoryFilter = document.querySelector('.category-filter')
 
 function loadFilters(){
-    DATA.categories.forEach(category=>{
+    dataSource.categories.forEach(category=>{
         let filter = document.createElement('div');
         filter.classList.add('filter-btn')
         filter.innerHTML =  `
@@ -280,3 +280,43 @@ function loadFilters(){
 }
 
 loadFilters()
+
+
+
+let input = document.getElementById('search')
+input.addEventListener('input' ,(e)=>{
+      searchFilter(input.value.toLowerCase())
+    
+    console.log(input.value)
+})
+
+
+
+function searchFilter(searchKeyWord){
+    dataSource= Data
+    let filteredItems ={"products":[]}
+    dataSource.products.forEach(item=>{
+        let category =item.category.toLowerCase()
+        let title =item.title.toLowerCase()
+        let description =item.description.toLowerCase()
+        let price = item.price.toString()
+
+        if(category.includes(searchKeyWord) || 
+            title.includes(searchKeyWord ||
+            price.includes(searchKeyWord) || 
+            description.includes(searchKeyWord)
+        ) ){
+
+            filteredItems['products'].push(item)
+
+        }
+    //    dataSource = filteredItems
+       loadProducts(filteredItems) 
+    })
+    
+    console.log(filteredItems)
+    
+
+}
+
+loadProducts(dataSource)
