@@ -112,11 +112,13 @@ const DATA = {
 
 
 let productArea =  document.querySelector('.products')
-
+let items = {}
 function loadPorducts(){
     
     DATA['products'].forEach(item => {
         console.log('loadItems : ',item)
+        items[item.id]= item
+        
         let card = document.createElement('div')
         card.classList.add('card')
         card.id=item.id
@@ -128,7 +130,7 @@ function loadPorducts(){
                      <div class="price-details">
                             <p class="product-price">Rs ${item.price}</p>
 
-                         <button class="buy" id=$item-{item.id}>Add</button>
+                         <button class="buy" id=item-${item.id}>Add</button>
                      </div>
                 </div>
             
@@ -139,7 +141,26 @@ function loadPorducts(){
 }
 
 loadPorducts()
+let cartData = {}
 
+productArea.addEventListener('click' ,e=>{
+    let target = e.target
+    if(target.classList == 'buy'){
+        let id =target.id.replace('item-','')
+        if (id in cartData){
+            cartData[id].count++
+        }
+        else{
+        cartData[id]={items : items[id],
+                    count : 1                   
+                    }
+            }
+
+        console.log(id)
+
+    }
+    console.log(cartData)
+})
 
 
 
