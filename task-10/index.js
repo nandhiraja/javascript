@@ -164,13 +164,19 @@ productArea.addEventListener('click' ,e=>{
 
 })
 
+let totalPrice  = document.querySelector('.price-amount')
 
 let cartArea = document.querySelector('.cart-items');
 
 function loadCartItems(){
     cartArea.innerHTML=''
+    let totalAmount = 0;
     for (const[key, value] of Object.entries(cartData)){
+
         let cartItem = document.createElement('div')
+        let amount  = value.item.price
+        totalAmount +=(amount * value.count)
+
         cartItem.classList.add('cart-item')
         cartItem.id = `cart-${key}`
 
@@ -180,9 +186,12 @@ function loadCartItems(){
                         </div>
                         <div class="cart-details">
                             <div class="cart-item-title">${value.item.title}</div>
+                            <div class="cart-item-count">|  ${value.count} * ${amount} </div>
+
                             <div class="cart-price-details">
-                                 <p class="cart-product-price">Rs ${value.item.price}</p>
-                            
+
+                                 <p class="cart-product-price">Rs ${amount*value.count}</p>
+
                                 <a class="cart-increment" href="#cart">+</a>
                             </div>
                         </div>
@@ -190,8 +199,10 @@ function loadCartItems(){
 
         cartItem.innerHTML= content
         cartArea.appendChild(cartItem)
+
         console.log('key : ',key, 'value : ',value)
     }
+    totalPrice.innerHTML =  `<p>${totalAmount}</p>`
 }
 
 
