@@ -263,3 +263,20 @@ function deleteItem(id){
     delete cartData[id]
     loadCartItems()
 }
+
+let categoryFilter = document.querySelector('.category-filter')
+
+function loadFilters(){
+    DATA.categories.forEach(category=>{
+        let filter = document.createElement('div');
+        filter.classList.add('filter-btn')
+        filter.innerHTML =  `
+                              <input type="checkbox" id="${category}">
+                             <label for="${category}">${category}</label>
+                          
+                             `
+        categoryFilter.append(filter)
+    })
+}
+
+loadFilters()
