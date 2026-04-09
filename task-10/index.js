@@ -109,7 +109,7 @@ const Data = {
     }
   ]
 }
-
+function loadPurchaseArea(){
 let dataSource = Data
 let productArea =  document.querySelector('.products')
 let items = {}
@@ -279,7 +279,6 @@ function loadFilters(){
     })
 }
 
-loadFilters()
 
 
 
@@ -320,3 +319,41 @@ function searchFilter(searchKeyWord){
 }
 
 loadProducts(dataSource)
+loadFilters()
+
+}
+
+const routers = {
+    'home':{
+        content: './home.html',
+        title:"Home | Shopify"
+    },
+    'shop':{
+        content: './purchase.html',
+        title:"AboutUs | Shopify"
+    },
+  
+
+}
+
+async function locationhandler (){
+    var location = window.location.hash.replace('#','')
+    if (location.length==0){
+        location='home'
+    }
+    else if (location == 'cart'){
+        return
+    }   
+
+    const route = routers[location]  || routers['/']
+    const htmlContent = await fetch(route.content).then((response)=> response.text())
+    document.getElementById('container-area').innerHTML =htmlContent;
+    document.title = route.title
+    loadPurchaseArea()
+
+
+}   
+
+
+window.addEventListener('hashchange' , locationhandler)  
+locationhandler()
