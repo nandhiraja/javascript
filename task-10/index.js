@@ -186,13 +186,18 @@ function loadCartItems(){
                         </div>
                         <div class="cart-details">
                             <div class="cart-item-title">${value.item.title}</div>
-                            <div class="cart-item-count">|  ${value.count} * ${amount} </div>
+                            <div class="cart-item-price">Rs: ${amount} </div>
 
                             <div class="cart-price-details">
 
-                                 <p class="cart-product-price">Rs ${amount*value.count}</p>
-
-                                <a class="cart-increment" href="#cart">+</a>
+                                <p class="cart-product-price">Rs ${amount*value.count}</p>
+                            
+                                <div class='cart-button-area'>
+                                <button class="cart-button increment" id=increment-item-${key}>+</button>
+                                <div class="item-count">${value.count}</div>
+                                <button class="cart-button decrement" id=decrement-item-${key}>-</button>
+                                <button class="remove-item" id="removeitem-${key}">Del</button>
+                                </div>
                             </div>
                         </div>
                     `
